@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Welcome to Ionic!</h2>
+  <button ion-button (click)="scan_qr_code();">打开摄像头</button>
+  <p>
+    This starter project comes with simple tabs-based layout for apps
+    that are going to primarily use a Tabbed UI.
+  </p>
+  <p>
+    Take a look at the <code>src/pages/</code> directory to add or change tabs,
+    update any existing page or create new pages.
+  </p>
+</ion-content>
+
+<div *ngIf="qrheader" class="div-scan">
+  <div class="scanner-object"></div>
+</div>
+
+<ion-footer *ngIf="qrheader">
+  <ion-row>
+    <ion-col col-4><ion-icon name="ios-arrow-dropleft-outline" class="qrscan-icon" (tap)="exit_from_qr_scan()"></ion-icon></ion-col>
+    <ion-col col-4><ion-icon name="flash" class="qrscan-icon" (tap)="light_enable_desable()"></ion-icon></ion-col>
+    <ion-col col-4><ion-icon name="camera" class="qrscan-icon" (tap)= "change_camera()"></ion-icon></ion-col>
+  </ion-row>
+</ion-footer>

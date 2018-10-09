@@ -1,0 +1,75 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+ion-app.cameraView, ion-app.cameraView ion-content, ion-app.cameraView .nav-decor {
+  background: transparent none !important;
+}
+.qrscan-icon {
+  display: inline-block;
+  font-size: 3.2em;
+  margin-left: 25px;
+  color: white !important;
+}
+
+.div-scan {
+  background: transparent none;
+  padding: 1.7em;
+  position: relative;
+  width: 65vw;
+  height: 70vw;
+  top: 25vw;
+  margin: 3em auto;
+  border: solid 1px color($colors, primary);
+}
+.div-scan::before, .div-scan::after {
+  position: absolute;
+  background: inherit;
+  content: '';
+  z-index: 1;
+}
+.div-scan::before {
+  width: 100px;
+  left: calc(50% - 50px);
+  height: calc(100% + 4px);
+  top: -2px;
+}
+.div-scan::after {
+  height: 100px;
+  left: -2px;
+  width: calc(100% + 4px);
+  top: calc(50% - 50px);
+}
+.div-scan > * {
+  position: relative; z-index: 2;
+}
+.scanner-object {
+  animation: Scanner 3s linear infinite;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: color($colors, danger);
+  width: 64vw;
+  height: .1rem;
+}
+@keyframes Scanner {
+  0%, 100% {
+    bottom: 2vw;
+  }
+  50% {
+    bottom: 68vw;
+  }
+}
